@@ -1,0 +1,6 @@
+{
+  "name": "Glamour Makeup Studio",
+  "description": "Premium multi-page website for Glamour Makeup Studio, specializing in luxury bridal, engagement, party, and occasion makeup artistry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
