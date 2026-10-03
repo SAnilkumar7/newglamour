@@ -30,7 +30,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         }`}
       >
         <img
-          src="public/logo.png" // <-- MAKE SURE THIS MATCHES YOUR IMAGE NAME IN THE PUBLIC FOLDER
+          src="/logo.png" // <-- MAKE SURE THIS MATCHES YOUR IMAGE NAME IN THE PUBLIC FOLDER
           alt="Glamour Makeup Studio Logo"
           className="w-full h-full object-contain" 
         />
