@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;
   wrapperClassName?: string;
-  fitMode?: 'cover' | 'smart' | 'contain' | 'portrait';
+  fitMode?: 'cover' | 'smart' | 'contain' | 'portrait' | 'free' | undefined;
   focalPoint?: 'top' | 'center' | 'bottom';
 }
 

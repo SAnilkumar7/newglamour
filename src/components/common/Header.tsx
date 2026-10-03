@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -12,7 +13,6 @@ import {
   Film,
   Sparkle
 } from 'lucide-react';
-import { WhatsAppIcon } from './WhatsAppIcon';
 import { BrandLogo } from './BrandLogo';
 import { studioBusinessInfo } from '../../data/businessData';
 
@@ -262,19 +262,6 @@ export const Header: React.FC = () => {
 
           {/* Right Action CTAs (Desktop) */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Real Minimal WhatsApp CTA */}
-            <a
-              href={`https://wa.me/${studioBusinessInfo.whatsapp}?text=${encodeURIComponent(
-                "Hello Glamour Makeup Studio, I would like to inquire about booking a makeup session."
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-[#25D366]/40 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] text-xs font-semibold uppercase tracking-wider transition-all"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-              <span>WhatsApp</span>
-            </a>
-
             {/* Primary Book CTA */}
             <Link
               to="/contact"
@@ -285,7 +272,7 @@ export const Header: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Right Controls: Phone + WhatsApp + Hamburger */}
+          {/* Mobile Right Controls: Phone + Hamburger */}
           <div className="flex lg:hidden items-center gap-2">
             <a
               href={`tel:${studioBusinessInfo.phone}`}
@@ -293,18 +280,6 @@ export const Header: React.FC = () => {
               className="w-9 h-9 rounded-full flex items-center justify-center bg-[#F2ECE3] text-[#181411] hover:bg-[#EAE2D7] transition-colors"
             >
               <Phone className="w-4 h-4 text-[#8C6D46]" />
-            </a>
-
-            <a
-              href={`https://wa.me/${studioBusinessInfo.whatsapp}?text=${encodeURIComponent(
-                "Hello Glamour Makeup Studio, I would like to inquire about makeup services."
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp Glamour Studio"
-              className="w-9 h-9 rounded-full flex items-center justify-center bg-[#25D366]/15 text-[#128C7E] hover:bg-[#25D366]/25 transition-colors"
-            >
-              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
             </a>
 
             <button
@@ -357,7 +332,7 @@ export const Header: React.FC = () => {
                   <ArrowRight className="w-4 h-4 text-[#B3874B] opacity-60" />
                 </Link>
 
-                {/* SERVICES DROPDOWN ACCORDION (REQUESTED BY USER) */}
+                {/* SERVICES DROPDOWN ACCORDION */}
                 <div className="bg-[#FFFFFF] rounded-xl border border-[#E8DFD5] overflow-hidden">
                   <button
                     type="button"
@@ -396,7 +371,7 @@ export const Header: React.FC = () => {
                   )}
                 </div>
 
-                {/* PORTFOLIO DROPDOWN ACCORDION (PHOTOS & VIDEOS - REQUESTED BY USER) */}
+                {/* PORTFOLIO DROPDOWN ACCORDION */}
                 <div className="bg-[#FFFFFF] rounded-xl border border-[#E8DFD5] overflow-hidden">
                   <button
                     type="button"
@@ -510,18 +485,6 @@ export const Header: React.FC = () => {
                 <Calendar className="w-4 h-4 text-[#E5C384]" />
                 <span>Book an Appointment</span>
               </Link>
-
-              <a
-                href={`https://wa.me/${studioBusinessInfo.whatsapp}?text=${encodeURIComponent(
-                  "Hello Glamour Makeup Studio, I would like to book a makeup appointment."
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2.5 py-3.5 px-4 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold uppercase tracking-[0.16em] rounded-full shadow transition-colors"
-              >
-                <WhatsAppIcon className="w-4 h-4 text-white" />
-                <span>Chat on WhatsApp</span>
-              </a>
 
               <div className="text-center pt-2">
                 <span className="text-[11px] text-[#7A6D61] block">

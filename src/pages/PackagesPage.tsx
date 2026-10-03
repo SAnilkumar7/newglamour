@@ -1,9 +1,12 @@
+  
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Sparkles, ArrowRight, HelpCircle } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, HelpCircle, PhoneCall, Calendar, MessageCircle } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
-import { studioPackages } from '../data/businessData';
+import { studioPackages, studioBusinessInfo } from '../data/businessData';
 import { WhatsAppButton } from '../components/common/WhatsAppButton';
 import { heroImages } from '../data/images';
 import { useBooking } from '../context/BookingContext';
@@ -159,25 +162,73 @@ export const PackagesPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Link to Add-Ons Menu */}
-        <div className="mt-16 p-8 sm:p-10 bg-[#120F0D] text-[#FAF8F5] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-[#C9A050]/15 rounded-full blur-3xl pointer-events-none" />
+        {/* ✅ NEW: Free Consultation CTA Banner (replaced Add-Ons banner) */}
+        <div className="mt-16 p-8 sm:p-10 bg-gradient-to-br from-[#120F0D] via-[#1F1915] to-[#120F0D] text-[#FAF8F5] rounded-3xl shadow-2xl relative overflow-hidden">
 
-          <div className="text-left">
-            <h4 className="font-serif text-2xl sm:text-3xl text-[#FAF8F5] mb-2">
-              Want to Enhance Your Package with Add-Ons?
-            </h4>
-            <p className="text-xs sm:text-sm text-[#D5C9BD]">
-              Explore our menu of hair accessories, premium lashes, bridesmaid packages, and outstation travel.
-            </p>
+          {/* Decorative glow */}
+          <div className="absolute top-0 right-0 w-72 h-72 bg-[#C9A050]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-56 h-56 bg-[#C9A050]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+            {/* Left: Text */}
+            <div className="lg:col-span-7 text-left space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#C9A050]/15 border border-[#C9A050]/30">
+                <Sparkles className="w-3 h-3 text-[#E5C384]" />
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold text-[#E5C384]">
+                  Complimentary • No Obligation
+                </span>
+              </div>
+
+              <h4 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#FAF8F5] leading-tight">
+                Not Sure Which Package Fits Your Day?
+              </h4>
+
+              <p className="text-xs sm:text-sm text-[#D5C9BD] leading-relaxed max-w-xl">
+                Book a <strong className="text-[#E5C384] font-semibold">free 20-minute bridal consultation</strong> with Shwetha Subhash. Share your wedding date, venue, and vision — she'll recommend the ideal package, timeline, and skin-prep plan tailored to you.
+              </p>
+
+              {/* Mini Benefits Row */}
+              <div className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-[11px] sm:text-xs text-[#D5C9BD]">
+                <span className="inline-flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#C9A050]" />
+                  Personalized Package Advice
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#C9A050]" />
+                  Date Availability Check
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#C9A050]" />
+                  Skin Prep Guidance
+                </span>
+              </div>
+            </div>
+
+            {/* Right: CTA Buttons */}
+            <div className="lg:col-span-5 flex flex-col gap-3 w-full">
+              <Link
+                to="/contact"
+                className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-full bg-[#FAF8F5] hover:bg-white text-[#120F0D] text-xs uppercase tracking-widest font-semibold transition-all shadow-md active:scale-95"
+              >
+                <Calendar className="w-4 h-4 text-[#8C6839]" />
+                <span>Book Free Consultation</span>
+              </Link>
+
+              <a
+                href={`tel:${studioBusinessInfo.phone}`}
+                className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-full border border-[#C9A050]/50 bg-[#1F1915]/60 hover:bg-[#1F1915] text-[#E5C384] text-xs uppercase tracking-wider font-semibold transition-all shadow-md active:scale-95"
+              >
+                <PhoneCall className="w-4 h-4" />
+                <span>Call {studioBusinessInfo.phoneDisplay}</span>
+              </a>
+
+              <p className="text-[10px] text-center text-[#9C8F84] pt-1 uppercase tracking-wider">
+                Typical reply within 15 minutes
+              </p>
+            </div>
+
           </div>
-          <Link
-            to="/add-ons"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#FAF8F5] hover:bg-white text-[#120F0D] font-semibold text-xs uppercase tracking-widest rounded-full transition-all shadow-md active:scale-95 shrink-0"
-          >
-            Explore Add-Ons Menu
-            <ArrowRight className="w-4 h-4 text-[#8C6839]" />
-          </Link>
         </div>
 
       </AnimatedSection>

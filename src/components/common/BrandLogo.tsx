@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles } from 'lucide-react';
 
 interface BrandLogoProps {
   variant?: 'header' | 'footer' | 'hero' | 'drawer';
@@ -20,23 +19,25 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <div
       className={`inline-flex items-center gap-3 group select-none transition-all duration-300 ${className}`}
     >
-      {/* Luxury Minimal Crest Monogram */}
+      {/* --- NEW LOGO IMAGE SECTION --- */}
       <div
-        className={`relative shrink-0 flex items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-105 ${
+        className={`relative shrink-0 flex items-center justify-center rounded-full overflow-hidden transition-transform duration-300 group-hover:scale-105 ${
           isFooter
-            ? 'w-11 h-11 bg-[#241C16] border border-[#C4A482]/40 text-[#E5C384]'
+            ? 'w-11 h-11 border border-[#C4A482]/40'
             : isDrawer
-            ? 'w-10 h-10 bg-[#1F1915] border border-[#D4AF37]/50 text-[#FAF8F5]'
-            : 'w-10 h-10 sm:w-11 sm:h-11 bg-[#1A1512] border border-[#B3874B]/50 text-[#FAF8F5] shadow-sm'
+            ? 'w-10 h-10 border border-[#D4AF37]/50'
+            : 'w-10 h-10 sm:w-11 sm:h-11 border border-[#B3874B]/50 shadow-sm'
         }`}
       >
-        <span className="font-serif italic font-bold text-lg sm:text-xl text-[#E5C384] leading-none">
-          G
-        </span>
-        <Sparkles className="w-2.5 h-2.5 text-[#D4AF37] absolute -top-0.5 -right-0.5" />
+        <img
+          src="public/logo.png" // <-- MAKE SURE THIS MATCHES YOUR IMAGE NAME IN THE PUBLIC FOLDER
+          alt="Glamour Makeup Studio Logo"
+          className="w-full h-full object-contain" 
+        />
       </div>
+      {/* ---------------------------- */}
 
-      {/* Clean Luxury Wordmark */}
+      {/* Clean Luxury Wordmark (Kept exactly as you had it) */}
       <div className="flex flex-col text-left justify-center">
         <span
           className={`font-serif tracking-[0.22em] font-semibold uppercase leading-tight transition-colors ${

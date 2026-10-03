@@ -44,7 +44,7 @@ export const MeetTheArtistPage: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden rounded-3xl shadow-2xl border border-[#EFE8DE] bg-[#F2EDE4]">
               <SafeImage
-                src="/uploads/artist/founder2.jpg"
+                src={artistImages.portraitMain}
                 alt="Shwetha Subhash - Founder & Lead Makeup Artist"
                 fitMode="smart"
                 focalPoint="top"
